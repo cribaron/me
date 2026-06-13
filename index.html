@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian Rey Baron | Systems Analyst & Developer</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #050508;
+            --accent-color: #00ffcc; /* Cyberpunk/Cinematic Teal */
+            --accent-glow: rgba(0, 255, 204, 0.15);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --card-border: rgba(255, 255, 255, 0.05);
+            --bank-blue: #0066ff;
+            --prop-purple: #a855f7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Ambient Cinematic Lighting Backgrounds */
+        .ambient-glow-1 {
+            position: fixed;
+            top: -10%;
+            right: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(0, 102, 255, 0.08) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .ambient-glow-2 {
+            position: fixed;
+            bottom: -10%;
+            left: -10%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* --- HERO SECTION --- */
+        header {
+            text-align: center;
+            padding: 4rem 0 3rem 0;
+            position: relative;
+        }
+
+        /* Profile Picture Styling */
+        .profile-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-container::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-color), var(--bank-blue));
+            z-index: 1;
+            opacity: 0.7;
+            filter: blur(4px);
+        }
+
+        .hero-tag {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-color);
+            letter-spacing: 0.4rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+            text-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 0.2rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+            background: linear-gradient(180deg, #ffffff 30%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+            font-weight: 300;
+            letter-spacing: 0.05rem;
+        }
+
+        /* --- TECH STACK (CHIPS) --- */
+        .tech-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tech-badge {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 0.5rem 1.2rem;
+            border-radius: 2px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05rem;
+            color: #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .tech-badge:hover {
+            border-color: var(--accent-color);
+            background: rgba(0, 255, 204, 0.03);
+            box-shadow: 0 0 15px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        .tech-badge.automation {
+            border-color: rgba(168, 85, 247, 0.4);
+        }
+        .tech-badge.automation:hover {
+            border-color: #a855f7;
+            background: rgba(168, 85, 247, 0.05);
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+        }
+
+        /* --- SECTION HEADINGS --- */
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.75rem;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 8rem 0 4rem 0;
+            position: relative;
+            color: #ffffff;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: var(--accent-color);
+            margin: 1rem auto 0 auto;
+            box-shadow: 0 0 8px var(--accent-color);
+        }
+
+        /* --- APPLICATIONS / PORTFOLIO GRID --- */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .app-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.01) 0%, rgba(255,255,255,0.03) 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .app-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-class {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 2px;
+        }
+
+        .app-class.enterprise {
+            background: rgba(0, 102, 255, 0.1);
+            color: #3b82f6;
+            border: 1px solid rgba(0, 102, 255, 0.2);
+        }
+
+        .app-class.proprietary {
+            background: rgba(168, 85, 247, 0.1);
+            color: #c084fc;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .app-icon-stack {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .app-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.05rem;
+        }
+
+        .app-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .app-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .app-mini-tag {
+            font-size: 0.7rem;
+            background: rgba(255,255,255,0.04);
+            color: #9ca3af;
+            padding: 0.15rem 0.5rem;
+            border-radius: 2px;
+        }
+
+        /* --- EXPERIENCE SECTION (TIMELINE) --- */
+        .timeline {
+            position: relative;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--card-border) 10%, var(--card-border) 90%, transparent);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            padding-right: 3rem;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+            padding-left: 3rem;
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: var(--bg-color);
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            top: 6px;
+            z-index: 2;
+        }
+
+        .left .timeline-dot { right: -5px; }
+        .right .timeline-dot { left: -3px; }
+
+        .timeline-item.active .timeline-dot {
+            border-color: var(--accent-color);
+            background-color: var(--accent-color);
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        .company-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: #ffffff;
+            letter-spacing: 0.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .duration-total {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .role-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 1.25rem;
+            border-radius: 4px;
+            display: inline-block;
+            text-align: left;
+            width: 100%;
+        }
+
+        .role-title { font-size: 1.05rem; font-weight: 600; color: #f3f4f6; }
+        .role-date { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .role-box .location { font-size: 0.8rem; color: var(--text-secondary); opacity: 0.7; display: block; margin-top: 0.25rem; }
+        .role-divider { height: 1px; background: var(--card-border); margin: 1rem 0; }
+
+        /* --- CONTACT / FOOTER SECTION --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 600px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 1.5rem;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card i { font-size: 1.5rem; color: var(--text-secondary); }
+        .contact-card div p:first-child { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05rem; }
+        .contact-card div p:last-child { font-weight: 600; font-size: 1rem; }
+
+        .contact-card.linkedin:hover { border-color: #0077b5; box-shadow: 0 0 15px rgba(0, 119, 181, 0.15); }
+        .contact-card.linkedin:hover i { color: #0077b5; }
+        .contact-card.facebook:hover { border-color: #1877f2; box-shadow: 0 0 15px rgba(24, 119, 242, 0.15); }
+        .contact-card.facebook:hover i { color: #1877f2; }
+        .contact-card.whatsapp:hover { border-color: #25d366; box-shadow: 0 0 15px rgba(37, 211, 102, 0.15); }
+        .contact-card.whatsapp:hover i { color: #25d366; }
+        .contact-card.viber:hover { border-color: #734d9c; box-shadow: 0 0 15px rgba(115, 77, 156, 0.15); }
+        .contact-card.viber:hover i { color: #734d9c; }
+
+        footer {
+            text-align: center;
+            margin-top: 8rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            opacity: 0.5;
+            letter-spacing: 0.05rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .timeline::before { left: 0; }
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 2rem !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+            .left .timeline-dot, .right .timeline-dot { left: -4px; right: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <div class="container">
+        
+        <!-- HERO SECTION -->
+        <header>
+            <!-- PROFILE IMAGE PICTURE -->
+            <div class="profile-container">
+                <!-- Replace 'profile.jpg' with your photo link (e.g., imgur or local file) -->
+                <img src="tech.png" alt="Christian Rey Baron" class="profile-img">
+            </div>
+
+            <span class="hero-tag">A Decade of Enterprise Systems Engineering</span>
+            <h1>Christian Rey Baron</h1>
+            <p class="subtitle">Systems Analyst & Full-Stack Developer engineering mission-critical banking portals and automated business software architectures.</p>
+            
+            <!-- TECH STACK -->
+            <div class="tech-container">
+                <div class="tech-badge">C#</div>
+                <div class="tech-badge">ASP.NET MVC</div>
+                <div class="tech-badge">Web API</div>
+                <div class="tech-badge">Entity Framework</div>
+                <div class="tech-badge automation"><i class="fa-solid fa-robot"></i> n8n</div>
+                <div class="tech-badge automation">Make.com</div>
+                <div class="tech-badge automation">Zapier</div>
+                <div class="tech-badge automation">GoHighLevel</div>
+            </div>
+        </header>
+
+        <!-- APP SHOWCASE SECTION -->
+        <main>
+            <h2 class="section-title">System Deployments</h2>
+            
+            <div class="showcase-grid">
+                
+                <!-- BANKING APP 1: Core Portals -->
+                <div class="app-card">
+                    <div class="app-meta">
+                        <span class="app-class enterprise">Banking Systems</span>
+                        <div class="app-icon-stack">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="app-title">Account Creation & Pre-Staging Portals</h3>
+                        <p class="app-desc">High-security, low-latency onboarding pipelines developed for banking environments to handle structured data capture and seamless account indexing.</p>
+                    </div>
+                    <div class="app-tags">
+                        <span class="app-mini-tag">C#</span>
+                        <span class="app-mini-tag">ASP.NET API</span>
+                        <span class="app-mini-tag">Security Compliance</span>
+                    </div>
+                </div>
+
+                <!-- BANKING APP 2: Operations -->
+                <div class="app-card">
+                    <div class="app-meta">
+                        <span class="app-class enterprise">Banking Systems</span>
+                        <div class="app-icon-stack">
+                            <i class="fa-solid fa-users-gear"></i>
+                            <i class="fa-solid fa-display"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="app-title">Queueing & Self-Service Infrastructure</h3>
+                        <p class="app-desc">Dynamic hardware-software orchestration handling high-volume real-time traffic, ticket generation, and custom touch-screen customer terminal portals.</p>
+                    </div>
+                    <div class="app-tags">
+                        <span class="app-mini-tag">Web API</span>
+                        <span class="app-mini-tag">Real-Time Sync</span>
+                        <span class="app-mini-tag">UX Systems</span>
+                    </div>
+                </div>
+
+                <!-- OWN APP 1: Digital Card & CRM -->
+                <div class="app-card">
+                    <div class="app-meta">
+                        <span class="app-class proprietary">Proprietary Suite</span>
+                        <div class="app-icon-stack">
+                            <i class="fa-solid fa-id-card"></i>
+                            <i class="fa-solid fa-address-book"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="app-title">Digital Business Card & CRM Platform</h3>
+                        <p class="app-desc">An interactive ecosystem integrating contactless presentation cards with an automated CRM backend utilizing intelligent webhook capture mechanisms.</p>
+                    </div>
+                    <div class="app-tags">
+                        <span class="app-mini-tag">n8n / Make</span>
+                        <span class="app-mini-tag">GoHighLevel</span>
+                        <span class="app-mini-tag">Growth Architecture</span>
+                    </div>
+                </div>
+
+                <!-- OWN APP 2: Enterprise Operations -->
+                <div class="app-card">
+                    <div class="app-meta">
+                        <span class="app-class proprietary">Proprietary Suite</span>
+                        <div class="app-icon-stack">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                            <i class="fa-solid fa-sitemap"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="app-title">Integrated HRIS & Inventory System</h3>
+                        <p class="app-desc">A unified resource engine managing logistics matrices and organizational operational dependencies, optimizing database transactions perfectly.</p>
+                    </div>
+                    <div class="app-tags">
+                        <span class="app-mini-tag">Entity Framework</span>
+                        <span class="app-mini-tag">C# Backend</span>
+                        <span class="app-mini-tag">Relational DB</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- EXPERIENCE SECTION (TIMELINE) -->
+            <h2 class="section-title">Professional Timeline</h2>
+            
+            <div class="timeline">
+                
+                <!-- RCBC -->
+                <div class="timeline-item left active">
+                    <div class="timeline-dot"></div>
+                    <h3 class="company-name">RCBC</h3>
+                    <p class="duration-total">4 yrs 4 mos</p>
+                    
+                    <div class="role-box">
+                        <div class="role-title">System Analyst</div>
+                        <div class="role-date">Feb 2025 - Present · 1 yr 5 mos</div>
+                        
+                        <div class="role-divider"></div>
+                        
+                        <div class="role-title">Programmer</div>
+                        <div class="role-date">Mar 2022 - Feb 2025 · 3 yrs</div>
+                    </div>
+                </div>
+
+                <!-- ePDS Inc. -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <h3 class="company-name">ePDS Inc.</h3>
+                    <p class="duration-total">7 yrs 3 mos</p>
+                    
+                    <div class="role-box">
+                        <div class="role-title">Systems Development Officer</div>
+                        <div class="role-date">Aug 2019 - Mar 2022 · 2 yrs 8 mos</div>
+                        
+                        <div class="role-divider"></div>
+                        
+                        <div class="role-title">System Programmer 2</div>
+                        <div class="role-date">Jun 2017 - Aug 2019 · 2 yrs 3 mos</div>
+                        <span class="location">Makati City, Magallanes</span>
+                        
+                        <div class="role-divider"></div>
+                        
+                        <div class="role-title">System Programmer</div>
+                        <div class="role-date">Jan 2015 - Jun 2017 · 2 yrs 6 mos</div>
+                        <span class="location">Makati City, Philippines</span>
+                    </div>
+                </div>
+
+                <!-- Velcoasia -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <h3 class="company-name">Velcoasia Management Corp.</h3>
+                    <p class="duration-total">4 mos</p>
+                    
+                    <div class="role-box">
+                        <div class="role-title">IT Support Staff</div>
+                        <div class="role-date">Jun 2014 - Sep 2014 · 4 mos</div>
+                        <span class="location">Manila City, Philippines</span>
+                    </div>
+                </div>
+
+                <!-- Smart Communications -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <h3 class="company-name">Smart Communications, Inc.</h3>
+                    <p class="duration-total">Internship</p>
+                    
+                    <div class="role-box">
+                        <div class="role-title">IT Intern</div>
+                        <div class="role-date">Nov 2013 - Feb 2014 · 4 mos</div>
+                        <span class="location">Makati City, Philippines</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CONTACT SECTION -->
+            <h2 class="section-title">Connect</h2>
+            
+            <div class="contact-grid">
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/YOUR-PROFILE" target="_blank" class="contact-card linkedin">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <div>
+                        <p>LinkedIn</p>
+                        <p>Professional Profile</p>
+                    </div>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://facebook.com/YOUR-PROFILE" target="_blank" class="contact-card facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <div>
+                        <p>Facebook</p>
+                        <p>Connect Locally</p>
+                    </div>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/YOUR-NUMBER" target="_blank" class="contact-card whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <p>WhatsApp</p>
+                        <p>Instant Message</p>
+                    </div>
+                </a>
+
+                <!-- Viber -->
+                <a href="viber://contact?number=%2BYOUR-NUMBER" target="_blank" class="contact-card viber">
+                    <i class="fa-brands fa-viber"></i>
+                    <div>
+                        <p>Viber</p>
+                        <p>Direct Business Line</p>
+                    </div>
+                </a>
+            </div>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Christian Rey Baron. Built for high-performance deployment. Manila, Philippines.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
