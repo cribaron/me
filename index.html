@@ -21,7 +21,7 @@
             --card-bg: rgba(255, 255, 255, 0.02);
             --card-border: rgba(255, 255, 255, 0.05);
             --bank-blue: #0066ff;
-            --prop-purple: #a855f7;
+            --sec-orange: #ff5722;
         }
 
         * {
@@ -145,7 +145,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 0.75rem;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -166,6 +166,15 @@
             background: rgba(0, 255, 204, 0.03);
             box-shadow: 0 0 15px var(--accent-glow);
             transform: translateY(-2px);
+        }
+
+        .tech-badge.devops {
+            border-color: rgba(255, 87, 34, 0.4); /* Subtly colored for CI/CD & Security */
+        }
+        .tech-badge.devops:hover {
+            border-color: var(--sec-orange);
+            background: rgba(255, 87, 34, 0.05);
+            box-shadow: 0 0 15px rgba(255, 87, 34, 0.2);
         }
 
         .tech-badge.automation {
@@ -386,7 +395,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            max-width: 600px;
+            max-width: 750px;
             margin: 0 auto;
         }
 
@@ -409,12 +418,14 @@
 
         .contact-card i { font-size: 1.5rem; color: var(--text-secondary); }
         .contact-card div p:first-child { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05rem; }
-        .contact-card div p:last-child { font-weight: 600; font-size: 1rem; }
+        .contact-card div p:last-child { font-weight: 600; font-size: 1rem; word-break: break-all; }
 
         .contact-card.linkedin:hover { border-color: #0077b5; box-shadow: 0 0 15px rgba(0, 119, 181, 0.15); }
         .contact-card.linkedin:hover i { color: #0077b5; }
-        .contact-card.facebook:hover { border-color: #1877f2; box-shadow: 0 0 15px rgba(24, 119, 242, 0.15); }
-        .contact-card.facebook:hover i { color: #1877f2; }
+        .contact-card.email:hover { border-color: #ea4335; box-shadow: 0 0 15px rgba(234, 67, 53, 0.15); }
+        .contact-card.email:hover i { color: #ea4335; }
+        .contact-card.phone:hover { border-color: #00ffcc; box-shadow: 0 0 15px rgba(0, 255, 204, 0.15); }
+        .contact-card.phone:hover i { color: #00ffcc; }
         .contact-card.whatsapp:hover { border-color: #25d366; box-shadow: 0 0 15px rgba(37, 211, 102, 0.15); }
         .contact-card.whatsapp:hover i { color: #25d366; }
         .contact-card.viber:hover { border-color: #734d9c; box-shadow: 0 0 15px rgba(115, 77, 156, 0.15); }
@@ -452,22 +463,23 @@
         
         <!-- HERO SECTION -->
         <header>
-            <!-- PROFILE IMAGE PICTURE -->
             <div class="profile-container">
-                <!-- Replace 'profile.jpg' with your photo link (e.g., imgur or local file) -->
+                <!-- Use your approved professional image here -->
                 <img src="tech.png" alt="Christian Rey Baron" class="profile-img">
             </div>
 
             <span class="hero-tag">A Decade of Enterprise Systems Engineering</span>
             <h1>Christian Rey Baron</h1>
-            <p class="subtitle">Systems Analyst & Full-Stack Developer engineering mission-critical banking portals and automated business software architectures.</p>
+            <p class="subtitle">Systems Analyst & Full-Stack Developer engineering microservices, secure banking portals, and automated business software architectures.</p>
             
             <!-- TECH STACK -->
             <div class="tech-container">
                 <div class="tech-badge">C#</div>
                 <div class="tech-badge">ASP.NET MVC</div>
                 <div class="tech-badge">Web API</div>
-                <div class="tech-badge">Entity Framework</div>
+                <div class="tech-badge">Microservices</div>
+                <div class="tech-badge devops">CI/CD Pipelines</div>
+                <div class="tech-badge devops">SAST & DAST</div>
                 <div class="tech-badge automation"><i class="fa-solid fa-robot"></i> n8n</div>
                 <div class="tech-badge automation">Make.com</div>
                 <div class="tech-badge automation">Zapier</div>
@@ -492,12 +504,12 @@
                     </div>
                     <div>
                         <h3 class="app-title">Account Creation & Pre-Staging Portals</h3>
-                        <p class="app-desc">High-security, low-latency onboarding pipelines developed for banking environments to handle structured data capture and seamless account indexing.</p>
+                        <p class="app-desc">High-security, microservice-driven onboarding pipelines developed to handle structured banking data capture with integrated SAST scans protecting sensitive user records.</p>
                     </div>
                     <div class="app-tags">
-                        <span class="app-mini-tag">C#</span>
-                        <span class="app-mini-tag">ASP.NET API</span>
-                        <span class="app-mini-tag">Security Compliance</span>
+                        <span class="app-mini-tag">Microservices</span>
+                        <span class="app-mini-tag">C# API</span>
+                        <span class="app-mini-tag">SAST Security</span>
                     </div>
                 </div>
 
@@ -507,17 +519,17 @@
                         <span class="app-class enterprise">Banking Systems</span>
                         <div class="app-icon-stack">
                             <i class="fa-solid fa-users-gear"></i>
-                            <i class="fa-solid fa-display"></i>
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
                         </div>
                     </div>
                     <div>
                         <h3 class="app-title">Queueing & Self-Service Infrastructure</h3>
-                        <p class="app-desc">Dynamic hardware-software orchestration handling high-volume real-time traffic, ticket generation, and custom touch-screen customer terminal portals.</p>
+                        <p class="app-desc">Dynamic hardware-software orchestration deployed using continuous automated CI/CD configurations, featuring live DAST testing to secure touchscreen terminal protocols against vectors.</p>
                     </div>
                     <div class="app-tags">
+                        <span class="app-mini-tag">CI/CD Setup</span>
                         <span class="app-mini-tag">Web API</span>
-                        <span class="app-mini-tag">Real-Time Sync</span>
-                        <span class="app-mini-tag">UX Systems</span>
+                        <span class="app-mini-tag">DAST Shield</span>
                     </div>
                 </div>
 
@@ -532,12 +544,12 @@
                     </div>
                     <div>
                         <h3 class="app-title">Digital Business Card & CRM Platform</h3>
-                        <p class="app-desc">An interactive ecosystem integrating contactless presentation cards with an automated CRM backend utilizing intelligent webhook capture mechanisms.</p>
+                        <p class="app-desc">An interactive contact ecosystem pairing smart contactless presentation layers with workflow backends built over advanced webhook catch systems.</p>
                     </div>
                     <div class="app-tags">
                         <span class="app-mini-tag">n8n / Make</span>
                         <span class="app-mini-tag">GoHighLevel</span>
-                        <span class="app-mini-tag">Growth Architecture</span>
+                        <span class="app-mini-tag">Automation</span>
                     </div>
                 </div>
 
@@ -552,7 +564,7 @@
                     </div>
                     <div>
                         <h3 class="app-title">Integrated HRIS & Inventory System</h3>
-                        <p class="app-desc">A unified resource engine managing logistics matrices and organizational operational dependencies, optimizing database transactions perfectly.</p>
+                        <p class="app-desc">A unified core processing matrix managing inventory workflows and organizational charts, running high-performance relational database layouts.</p>
                     </div>
                     <div class="app-tags">
                         <span class="app-mini-tag">Entity Framework</span>
@@ -643,38 +655,47 @@
             
             <div class="contact-grid">
                 <!-- LinkedIn -->
-                <a href="https://linkedin.com/in/YOUR-PROFILE" target="_blank" class="contact-card linkedin">
+                <a href="https://www.linkedin.com/in/christian-rey-baron-98a773130?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" class="contact-card linkedin">
                     <i class="fa-brands fa-linkedin-in"></i>
                     <div>
                         <p>LinkedIn</p>
-                        <p>Professional Profile</p>
+                        <p>Christian Rey Baron</p>
                     </div>
                 </a>
 
-                <!-- Facebook -->
-                <a href="https://facebook.com/YOUR-PROFILE" target="_blank" class="contact-card facebook">
-                    <i class="fa-brands fa-facebook-f"></i>
+                <!-- Email -->
+                <a href="mailto:cibaron8@gmail.com" class="contact-card email">
+                    <i class="fa-solid fa-envelope"></i>
                     <div>
-                        <p>Facebook</p>
-                        <p>Connect Locally</p>
+                        <p>Email</p>
+                        <p>cibaron8@gmail.com</p>
+                    </div>
+                </a>
+
+                <!-- Direct Call -->
+                <a href="tel:+639494404522" class="contact-card phone">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <p>Direct Call</p>
+                        <p>+63 949 440 4522</p>
                     </div>
                 </a>
 
                 <!-- WhatsApp -->
-                <a href="https://wa.me/YOUR-NUMBER" target="_blank" class="contact-card whatsapp">
+                <a href="https://wa.me/639494404522" target="_blank" class="contact-card whatsapp">
                     <i class="fa-brands fa-whatsapp"></i>
                     <div>
                         <p>WhatsApp</p>
-                        <p>Instant Message</p>
+                        <p>Message Instantly</p>
                     </div>
                 </a>
 
                 <!-- Viber -->
-                <a href="viber://contact?number=%2BYOUR-NUMBER" target="_blank" class="contact-card viber">
+                <a href="viber://contact?number=%2B639494404522" class="contact-card viber">
                     <i class="fa-brands fa-viber"></i>
                     <div>
                         <p>Viber</p>
-                        <p>Direct Business Line</p>
+                        <p>Direct Viber Line</p>
                     </div>
                 </a>
             </div>
@@ -682,7 +703,7 @@
         </main>
 
         <footer>
-            <p>&copy; 2026 Christian Rey Baron. Built for high-performance deployment. Manila, Philippines.</p>
+            <p>&copy; 2026 Christian Rey Baron. Engineered for high performance. Bacoor, Philippines.</p>
         </footer>
 
     </div>
