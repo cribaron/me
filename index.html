@@ -7,7 +7,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -21,7 +21,7 @@
             --card-bg: rgba(255, 255, 255, 0.02);
             --card-border: rgba(255, 255, 255, 0.05);
             --bank-blue: #0066ff;
-            --sec-orange: #ff5722;
+            --prop-purple: #a855f7;
         }
 
         * {
@@ -144,46 +144,54 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 0.75rem;
-            max-width: 900px;
+            gap: 0.5rem;
+            max-width: 800px;
             margin: 0 auto;
+            list-style: none;
         }
 
         .tech-badge {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 0.5rem 1.2rem;
-            border-radius: 2px;
-            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(56, 139, 253, 0.12);
+            border: 1px solid rgba(56, 139, 253, 0.22);
+            padding: 0.28rem 0.72rem;
+            border-radius: 999px;
+            font-size: 0.78rem;
             font-weight: 600;
-            letter-spacing: 0.05rem;
-            color: #e5e7eb;
-            transition: all 0.3s ease;
+            color: #79c0ff;
+            transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .tech-logo {
+            display: block;
+            width: 0.95rem;
+            height: 0.95rem;
+            flex: 0 0 auto;
+            object-fit: contain;
+        }
+
+        .tech-logo-icon {
+            font-size: 0.9rem;
+            line-height: 1;
         }
 
         .tech-badge:hover {
-            border-color: var(--accent-color);
-            background: rgba(0, 255, 204, 0.03);
-            box-shadow: 0 0 15px var(--accent-glow);
-            transform: translateY(-2px);
-        }
-
-        .tech-badge.devops {
-            border-color: rgba(255, 87, 34, 0.4); /* Subtly colored for CI/CD & Security */
-        }
-        .tech-badge.devops:hover {
-            border-color: var(--sec-orange);
-            background: rgba(255, 87, 34, 0.05);
-            box-shadow: 0 0 15px rgba(255, 87, 34, 0.2);
+            border-color: rgba(56, 139, 253, 0.55);
+            background: rgba(56, 139, 253, 0.2);
+            color: #a5d6ff;
         }
 
         .tech-badge.automation {
-            border-color: rgba(168, 85, 247, 0.4);
+            background: rgba(188, 140, 255, 0.12);
+            border-color: rgba(188, 140, 255, 0.24);
+            color: #d2a8ff;
         }
         .tech-badge.automation:hover {
-            border-color: #a855f7;
-            background: rgba(168, 85, 247, 0.05);
-            box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+            border-color: rgba(188, 140, 255, 0.55);
+            background: rgba(188, 140, 255, 0.2);
+            color: #e2c5ff;
         }
 
         /* --- SECTION HEADINGS --- */
@@ -385,6 +393,174 @@
             width: 100%;
         }
 
+        .career-scene {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            width: 100%;
+            min-height: 132px;
+            margin: 0 0 1rem;
+            padding: 0.5rem 0.7rem;
+            overflow: hidden;
+            border: 1px solid rgba(184, 255, 92, 0.18);
+            background: linear-gradient(110deg, rgba(184, 255, 92, 0.07), rgba(18, 21, 33, 0.7));
+            text-align: left;
+        }
+
+        .career-scene--senior {
+            border-color: rgba(240, 197, 102, 0.3);
+            background: linear-gradient(110deg, rgba(240, 197, 102, 0.11), rgba(18, 21, 33, 0.78));
+        }
+
+        .career-scene--support {
+            border-color: rgba(112, 214, 255, 0.24);
+            background: linear-gradient(110deg, rgba(112, 214, 255, 0.08), rgba(18, 21, 33, 0.78));
+        }
+
+        .career-scene--developer {
+            border-color: rgba(121, 192, 255, 0.24);
+            background: linear-gradient(110deg, rgba(121, 192, 255, 0.08), rgba(18, 21, 33, 0.78));
+        }
+
+        .career-pixel-art {
+            display: block;
+            width: min(58%, 176px);
+            height: auto;
+            flex: 0 1 176px;
+            image-rendering: pixelated;
+        }
+
+        .career-scene-copy {
+            display: grid;
+            justify-items: start;
+            gap: 0.45rem;
+            min-width: 0;
+        }
+
+        .career-company-mark {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            color: #f1f3e9;
+            font: 700 0.68rem 'Space Mono', monospace;
+            letter-spacing: 0.04rem;
+            line-height: 1.25;
+        }
+
+        .career-company-mark svg {
+            width: 1.65rem;
+            height: 1.65rem;
+            flex: 0 0 auto;
+        }
+
+        .career-company-logo {
+            display: block;
+            width: 2.1rem;
+            height: 2.1rem;
+            flex: 0 0 auto;
+            padding: 2px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: #f1f3e9;
+            image-rendering: pixelated;
+            object-fit: contain;
+        }
+
+        .career-company-logo--smart {
+            width: 4.5rem;
+            height: 1.75rem;
+            padding: 2px 3px;
+            border-color: rgba(215, 230, 0, 0.45);
+        }
+
+        .career-company-logo--epds {
+            width: 4.5rem;
+            height: 1.75rem;
+            padding: 2px 3px;
+            border-color: rgba(121, 192, 255, 0.4);
+        }
+
+        .career-company-logo--rcbc {
+            width: 20px;
+            height: 17px;
+            padding: 0;
+            border: 0;
+            border-color: rgba(72, 146, 207, 0.55);
+            transform: scale(1.65);
+        }
+
+        .career-company-logo-frame--rcbc {
+            display: grid;
+            place-items: center;
+            width: 34px;
+            height: 34px;
+            flex: 0 0 auto;
+            border: 2px solid rgba(72, 146, 207, 0.55);
+            background: #f1f3e9;
+        }
+
+        .career-scene-label {
+            color: var(--accent-color);
+            font: 700 0.58rem 'Space Mono', monospace;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+        }
+
+        .career-scene--senior .career-scene-label {
+            color: #f0c566;
+        }
+
+        .career-scene--developer .career-scene-label {
+            color: #79c0ff;
+        }
+
+        .career-scene--support .career-scene-label {
+            color: #70d6ff;
+        }
+
+        .career-scene-caption {
+            color: var(--text-secondary);
+            font-size: 0.72rem;
+            line-height: 1.4;
+        }
+
+        .career-scene[data-scroll-reveal] {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .career-scene.is-pending {
+            opacity: 0;
+            transform: translateY(14px);
+        }
+
+        .career-scene.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 500ms ease, transform 500ms steps(5, end);
+        }
+
+        .career-arm {
+            transform-box: fill-box;
+            transform-origin: top left;
+        }
+
+        .career-scene.is-visible .career-arm {
+            animation: career-work 420ms steps(2, end) infinite alternate;
+        }
+
+        .career-scene.is-visible .career-arm--far {
+            animation-delay: 210ms;
+        }
+
+        .career-scene.is-visible .career-screen-cursor {
+            animation: career-blink 800ms steps(2, end) infinite;
+        }
+
+        .career-scene--senior.is-visible {
+            animation: senior-aura 2.8s ease-in-out infinite alternate;
+        }
+
         .role-title { font-size: 1.05rem; font-weight: 600; color: #f3f4f6; }
         .role-date { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
         .role-box .location { font-size: 0.8rem; color: var(--text-secondary); opacity: 0.7; display: block; margin-top: 0.25rem; }
@@ -395,7 +571,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            max-width: 750px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
@@ -418,18 +594,121 @@
 
         .contact-card i { font-size: 1.5rem; color: var(--text-secondary); }
         .contact-card div p:first-child { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05rem; }
-        .contact-card div p:last-child { font-weight: 600; font-size: 1rem; word-break: break-all; }
+        .contact-card div p:last-child { font-weight: 600; font-size: 1rem; }
 
         .contact-card.linkedin:hover { border-color: #0077b5; box-shadow: 0 0 15px rgba(0, 119, 181, 0.15); }
         .contact-card.linkedin:hover i { color: #0077b5; }
-        .contact-card.email:hover { border-color: #ea4335; box-shadow: 0 0 15px rgba(234, 67, 53, 0.15); }
-        .contact-card.email:hover i { color: #ea4335; }
-        .contact-card.phone:hover { border-color: #00ffcc; box-shadow: 0 0 15px rgba(0, 255, 204, 0.15); }
-        .contact-card.phone:hover i { color: #00ffcc; }
+        .contact-card.phone:hover { border-color: var(--accent-color); box-shadow: 0 0 15px var(--accent-glow); }
+        .contact-card.phone:hover i { color: var(--accent-color); }
         .contact-card.whatsapp:hover { border-color: #25d366; box-shadow: 0 0 15px rgba(37, 211, 102, 0.15); }
         .contact-card.whatsapp:hover i { color: #25d366; }
         .contact-card.viber:hover { border-color: #734d9c; box-shadow: 0 0 15px rgba(115, 77, 156, 0.15); }
         .contact-card.viber:hover i { color: #734d9c; }
+
+        .floating-call {
+            position: fixed;
+            right: max(1.25rem, env(safe-area-inset-right));
+            bottom: max(1.25rem, env(safe-area-inset-bottom));
+            z-index: 20;
+            display: grid;
+            justify-items: end;
+            gap: 0.7rem;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+        }
+
+        .floating-call.is-hidden {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+        }
+
+        .floating-call-button {
+            display: grid;
+            place-items: center;
+            width: 58px;
+            height: 58px;
+            color: var(--bg-color);
+            background: var(--accent-color);
+            border: 2px solid #e6ffc4;
+            border-radius: 50%;
+            box-shadow: 0 0 22px var(--accent-glow), 4px 4px 0 rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: transform 160ms steps(3, end), box-shadow 160ms ease;
+        }
+
+        .floating-call-button:hover {
+            box-shadow: 0 0 30px rgba(184, 255, 92, 0.35), 2px 2px 0 rgba(0, 0, 0, 0.4);
+            transform: translate(2px, 2px);
+        }
+
+        .floating-call-button:focus-visible,
+        .floating-call-option:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 3px;
+        }
+
+        .floating-call-menu {
+            display: grid;
+            min-width: 190px;
+            gap: 0.45rem;
+            padding: 0.55rem;
+            border: 1px solid var(--card-border);
+            background: rgba(13, 16, 25, 0.97);
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        .floating-call-menu[hidden] {
+            display: none;
+        }
+
+        .floating-call-option {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            min-height: 42px;
+            padding: 0.55rem 0.7rem;
+            color: var(--text-primary);
+            border: 1px solid transparent;
+            text-decoration: none;
+            font: 700 0.72rem 'Space Mono', monospace;
+            transition: background-color 160ms ease, border-color 160ms ease;
+        }
+
+        .floating-call-option i {
+            width: 1rem;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .floating-call-option.whatsapp:hover {
+            border-color: rgba(37, 211, 102, 0.45);
+            background: rgba(37, 211, 102, 0.1);
+        }
+
+        .floating-call-option.whatsapp i { color: #25d366; }
+
+        .floating-call-option.viber:hover {
+            border-color: rgba(115, 77, 156, 0.55);
+            background: rgba(115, 77, 156, 0.12);
+        }
+
+        .floating-call-option.viber i { color: #b69ad3; }
+
+        @keyframes career-work {
+            to { transform: translateY(2px); }
+        }
+
+        @keyframes career-blink {
+            50% { opacity: 0.15; }
+        }
+
+        @keyframes senior-aura {
+            to { box-shadow: inset 0 0 28px rgba(240, 197, 102, 0.06), 0 0 14px rgba(240, 197, 102, 0.08); }
+        }
 
         footer {
             text-align: center;
@@ -452,6 +731,291 @@
             }
             .left .timeline-dot, .right .timeline-dot { left: -4px; right: auto; }
         }
+
+        :root {
+            --bg-color: #090a12;
+            --accent-color: #b8ff5c;
+            --accent-glow: rgba(184, 255, 92, 0.18);
+            --text-primary: #f1f3e9;
+            --text-secondary: #9da2b5;
+            --card-bg: rgba(18, 21, 33, 0.78);
+            --card-border: rgba(184, 255, 92, 0.16);
+            --bank-blue: #70d6ff;
+            --prop-purple: #c792ff;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-image:
+                linear-gradient(rgba(184, 255, 92, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(184, 255, 92, 0.035) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 5;
+            pointer-events: none;
+            opacity: 0.12;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0,
+                transparent 3px,
+                rgba(255, 255, 255, 0.08) 4px
+            );
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            padding-top: 2rem;
+            isolation: isolate;
+        }
+
+        .contribution-cover {
+            position: absolute;
+            top: 3rem;
+            left: 50%;
+            z-index: 0;
+            width: min(100%, 1100px);
+            height: 190px;
+            overflow: hidden;
+            transform: translateX(-50%);
+            border: 1px solid rgba(184, 255, 92, 0.12);
+            border-radius: 12px;
+            background:
+                linear-gradient(110deg, rgba(184, 255, 92, 0.08), transparent 52%),
+                linear-gradient(180deg, rgba(18, 21, 33, 0.95), rgba(9, 10, 18, 0.55));
+            pointer-events: none;
+            mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
+        }
+
+        .contribution-canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        header > :not(.contribution-cover) {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-container {
+            z-index: 2;
+        }
+
+        .system-status {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.65rem;
+            margin: 0 auto 3rem;
+            color: var(--text-secondary);
+            font: 700 0.68rem 'Space Mono', monospace;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+        }
+
+        .system-status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-color);
+            box-shadow: 0 0 12px var(--accent-color);
+            animation: pixel-blink 1.4s steps(2, end) infinite;
+        }
+
+        .profile-img {
+            border-radius: 12px;
+            border: 2px solid var(--accent-color);
+        }
+
+        .profile-container::after {
+            border-radius: 12px;
+            filter: blur(12px);
+        }
+
+        .hero-tag {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.16rem;
+        }
+
+        h1,
+        .section-title,
+        .app-title,
+        .company-name {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        h1 {
+            letter-spacing: -0.06rem;
+            text-transform: none;
+            background: linear-gradient(100deg, #fff 20%, var(--accent-color) 85%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-weight: 400;
+            letter-spacing: 0;
+        }
+
+        .bookmark-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            min-height: 48px;
+            margin: 0 auto 0.65rem;
+            padding: 0.8rem 1.15rem;
+            color: var(--accent-color);
+            background: rgba(184, 255, 92, 0.08);
+            border: 1px solid var(--accent-color);
+            border-radius: 3px;
+            box-shadow: 4px 4px 0 rgba(184, 255, 92, 0.18);
+            cursor: pointer;
+            font: 700 0.76rem 'Space Mono', monospace;
+            letter-spacing: 0.04rem;
+            text-transform: uppercase;
+            transition: transform 160ms steps(3, end), box-shadow 160ms steps(3, end), background 160ms ease;
+        }
+
+        .bookmark-button:hover {
+            color: var(--bg-color);
+            background: var(--accent-color);
+            box-shadow: 2px 2px 0 rgba(184, 255, 92, 0.28);
+            transform: translate(2px, 2px);
+        }
+
+        .bookmark-button:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 4px;
+        }
+
+        .bookmark-button[aria-pressed="true"] {
+            color: var(--bg-color);
+            background: var(--accent-color);
+        }
+
+        .bookmark-button.is-saving {
+            animation: bookmark-pop 280ms steps(3, end);
+        }
+
+        .bookmark-help {
+            min-height: 1.4rem;
+            color: var(--text-secondary);
+            font: 0.72rem 'Space Mono', monospace;
+        }
+
+        .app-card,
+        .role-box,
+        .contact-card {
+            border-radius: 3px;
+        }
+
+        .tech-badge {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0;
+        }
+
+        .tech-heading {
+            margin: 1.5rem 0 0.7rem;
+            color: var(--text-secondary);
+            font: 700 0.65rem 'Space Mono', monospace;
+            letter-spacing: 0.12rem;
+            text-transform: uppercase;
+        }
+
+        .app-card {
+            background: linear-gradient(145deg, rgba(24, 28, 43, 0.92), rgba(13, 15, 25, 0.88));
+            border-color: rgba(184, 255, 92, 0.13);
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .app-card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 5px 5px 0 rgba(184, 255, 92, 0.16);
+        }
+
+        .section-title {
+            font-size: 1.55rem;
+            letter-spacing: 0.08rem;
+        }
+
+        .section-title::before {
+            content: '// ';
+            color: var(--accent-color);
+            font: 700 1rem 'Space Mono', monospace;
+        }
+
+        .app-title,
+        .company-name {
+            letter-spacing: 0;
+        }
+
+        .app-mini-tag,
+        .duration-total {
+            font-family: 'Space Mono', monospace;
+        }
+
+        .role-box {
+            background: rgba(18, 21, 33, 0.72);
+            border-color: rgba(184, 255, 92, 0.12);
+        }
+
+        .contact-card {
+            background: rgba(18, 21, 33, 0.78);
+        }
+
+        footer {
+            font-family: 'Space Mono', monospace;
+        }
+
+        @keyframes pixel-blink {
+            50% { opacity: 0.3; }
+        }
+
+        @keyframes bookmark-pop {
+            50% { transform: translateY(-4px) scale(1.03); }
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 2rem 1.1rem; }
+            .system-status { margin-bottom: 2rem; font-size: 0.58rem; }
+            .hero-tag { letter-spacing: 0.08rem; }
+            .bookmark-button { width: 100%; max-width: 280px; }
+            .contribution-cover { top: 3rem; height: 165px; }
+            .career-scene { gap: 0.35rem; padding: 0.4rem; }
+            .career-company-mark { font-size: 0.58rem; }
+            .career-scene-caption { font-size: 0.66rem; }
+            .floating-call { right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); }
+            .floating-call-button { width: 54px; height: 54px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .career-scene.is-visible .career-arm,
+            .career-scene.is-visible .career-screen-cursor,
+            .career-scene--senior.is-visible {
+                animation: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -463,28 +1027,37 @@
         
         <!-- HERO SECTION -->
         <header>
+            <div class="contribution-cover" aria-hidden="true">
+                <canvas class="contribution-canvas" id="contribution-canvas"></canvas>
+            </div>
+            <div class="system-status">BUILD MODE: ACTIVE <span>// 2026.11</span></div>
+            <!-- PROFILE IMAGE PICTURE -->
             <div class="profile-container">
-                <!-- Use your approved professional image here -->
+                <!-- Replace 'profile.jpg' with your photo link (e.g., imgur or local file) -->
                 <img src="tech.png" alt="Christian Rey Baron" class="profile-img">
             </div>
 
             <span class="hero-tag">A Decade of Enterprise Systems Engineering</span>
             <h1>Christian Rey Baron</h1>
-            <p class="subtitle">Systems Analyst & Full-Stack Developer engineering microservices, secure banking portals, and automated business software architectures.</p>
+            <p class="subtitle">Systems Analyst & Full-Stack Developer engineering mission-critical banking portals and automated business software architectures.</p>
+            <button class="bookmark-button" id="bookmark-button" type="button" aria-pressed="false" aria-describedby="bookmark-help">
+                <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+                <span>Add to bookmarks</span>
+            </button>
+            <p class="bookmark-help" id="bookmark-help" aria-live="polite">Save this card on this device for later.</p>
             
             <!-- TECH STACK -->
-            <div class="tech-container">
-                <div class="tech-badge">C#</div>
-                <div class="tech-badge">ASP.NET MVC</div>
-                <div class="tech-badge">Web API</div>
-                <div class="tech-badge">Microservices</div>
-                <div class="tech-badge devops">CI/CD Pipelines</div>
-                <div class="tech-badge devops">SAST & DAST</div>
-                <div class="tech-badge automation"><i class="fa-solid fa-robot"></i> n8n</div>
-                <div class="tech-badge automation">Make.com</div>
-                <div class="tech-badge automation">Zapier</div>
-                <div class="tech-badge automation">GoHighLevel</div>
-            </div>
+            <p class="tech-heading">Tech stack</p>
+            <ul class="tech-container" aria-label="Technology tags">
+                <li class="tech-badge"><img class="tech-logo" src="https://cdn.simpleicons.org/dotnet/79c0ff" alt="" aria-hidden="true">C#</li>
+                <li class="tech-badge"><i class="tech-logo-icon fa-brands fa-microsoft" aria-hidden="true"></i>ASP.NET MVC</li>
+                <li class="tech-badge"><img class="tech-logo" src="https://cdn.simpleicons.org/swagger/79c0ff" alt="" aria-hidden="true">Web API</li>
+                <li class="tech-badge"><i class="tech-logo-icon fa-solid fa-database" aria-hidden="true"></i>Entity Framework</li>
+                <li class="tech-badge automation"><img class="tech-logo" src="https://cdn.simpleicons.org/n8n/d2a8ff" alt="" aria-hidden="true">n8n</li>
+                <li class="tech-badge automation"><img class="tech-logo" src="https://cdn.simpleicons.org/make/d2a8ff" alt="" aria-hidden="true">Make.com</li>
+                <li class="tech-badge automation"><img class="tech-logo" src="https://cdn.simpleicons.org/zapier/d2a8ff" alt="" aria-hidden="true">Zapier</li>
+                <li class="tech-badge automation"><i class="tech-logo-icon fa-solid fa-chart-line" aria-hidden="true"></i>GoHighLevel</li>
+            </ul>
         </header>
 
         <!-- APP SHOWCASE SECTION -->
@@ -504,12 +1077,12 @@
                     </div>
                     <div>
                         <h3 class="app-title">Account Creation & Pre-Staging Portals</h3>
-                        <p class="app-desc">High-security, microservice-driven onboarding pipelines developed to handle structured banking data capture with integrated SAST scans protecting sensitive user records.</p>
+                        <p class="app-desc">High-security, low-latency onboarding pipelines developed for banking environments to handle structured data capture and seamless account indexing.</p>
                     </div>
                     <div class="app-tags">
-                        <span class="app-mini-tag">Microservices</span>
-                        <span class="app-mini-tag">C# API</span>
-                        <span class="app-mini-tag">SAST Security</span>
+                        <span class="app-mini-tag">C#</span>
+                        <span class="app-mini-tag">ASP.NET API</span>
+                        <span class="app-mini-tag">Security Compliance</span>
                     </div>
                 </div>
 
@@ -519,17 +1092,17 @@
                         <span class="app-class enterprise">Banking Systems</span>
                         <div class="app-icon-stack">
                             <i class="fa-solid fa-users-gear"></i>
-                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <i class="fa-solid fa-display"></i>
                         </div>
                     </div>
                     <div>
                         <h3 class="app-title">Queueing & Self-Service Infrastructure</h3>
-                        <p class="app-desc">Dynamic hardware-software orchestration deployed using continuous automated CI/CD configurations, featuring live DAST testing to secure touchscreen terminal protocols against vectors.</p>
+                        <p class="app-desc">Dynamic hardware-software orchestration handling high-volume real-time traffic, ticket generation, and custom touch-screen customer terminal portals.</p>
                     </div>
                     <div class="app-tags">
-                        <span class="app-mini-tag">CI/CD Setup</span>
                         <span class="app-mini-tag">Web API</span>
-                        <span class="app-mini-tag">DAST Shield</span>
+                        <span class="app-mini-tag">Real-Time Sync</span>
+                        <span class="app-mini-tag">UX Systems</span>
                     </div>
                 </div>
 
@@ -544,12 +1117,12 @@
                     </div>
                     <div>
                         <h3 class="app-title">Digital Business Card & CRM Platform</h3>
-                        <p class="app-desc">An interactive contact ecosystem pairing smart contactless presentation layers with workflow backends built over advanced webhook catch systems.</p>
+                        <p class="app-desc">An interactive ecosystem integrating contactless presentation cards with an automated CRM backend utilizing intelligent webhook capture mechanisms.</p>
                     </div>
                     <div class="app-tags">
                         <span class="app-mini-tag">n8n / Make</span>
                         <span class="app-mini-tag">GoHighLevel</span>
-                        <span class="app-mini-tag">Automation</span>
+                        <span class="app-mini-tag">Growth Architecture</span>
                     </div>
                 </div>
 
@@ -564,7 +1137,7 @@
                     </div>
                     <div>
                         <h3 class="app-title">Integrated HRIS & Inventory System</h3>
-                        <p class="app-desc">A unified core processing matrix managing inventory workflows and organizational charts, running high-performance relational database layouts.</p>
+                        <p class="app-desc">A unified resource engine managing logistics matrices and organizational operational dependencies, optimizing database transactions perfectly.</p>
                     </div>
                     <div class="app-tags">
                         <span class="app-mini-tag">Entity Framework</span>
@@ -586,6 +1159,53 @@
                     <div class="timeline-dot"></div>
                     <h3 class="company-name">RCBC</h3>
                     <p class="duration-total">4 yrs 4 mos</p>
+
+                    <div class="career-scene career-scene--senior" data-scroll-reveal>
+                        <svg class="career-pixel-art" viewBox="0 0 176 132" role="img" aria-label="Pixel-art senior systems analyst reviewing banking dashboards in a tailored suit">
+                            <rect x="10" y="16" width="56" height="42" fill="#121a29"/>
+                            <rect x="14" y="20" width="48" height="34" fill="#23374a"/>
+                            <rect x="19" y="26" width="17" height="3" fill="#f0c566"/>
+                            <rect x="19" y="33" width="34" height="3" fill="#70d6ff" opacity=".8"/>
+                            <rect x="19" y="41" width="5" height="8" fill="#70d6ff" opacity=".55"/>
+                            <rect x="28" y="37" width="5" height="12" fill="#f0c566"/>
+                            <rect x="37" y="31" width="5" height="18" fill="#70d6ff"/>
+                            <rect x="46" y="35" width="5" height="14" fill="#b8ff5c" opacity=".8"/>
+                            <rect x="113" y="13" width="52" height="45" fill="#121a29"/>
+                            <rect x="117" y="17" width="44" height="37" fill="#1d3043"/>
+                            <rect x="122" y="23" width="18" height="3" fill="#f0c566"/>
+                            <rect x="122" y="31" width="32" height="3" fill="#aab5c2" opacity=".8"/>
+                            <rect x="122" y="39" width="25" height="3" fill="#70d6ff" opacity=".75"/>
+                            <rect x="122" y="47" width="35" height="3" fill="#aab5c2" opacity=".55"/>
+                            <rect x="30" y="75" width="116" height="6" fill="#b28b5b"/>
+                            <rect x="37" y="81" width="6" height="38" fill="#55453d"/>
+                            <rect x="132" y="81" width="6" height="38" fill="#55453d"/>
+                            <rect x="76" y="42" width="27" height="27" fill="#c99571"/>
+                            <rect x="72" y="37" width="34" height="10" fill="#c7cbd3"/>
+                            <rect x="72" y="43" width="6" height="8" fill="#c7cbd3"/>
+                            <rect x="99" y="43" width="7" height="8" fill="#c7cbd3"/>
+                            <rect x="80" y="52" width="4" height="4" fill="#18202d"/>
+                            <rect x="95" y="52" width="4" height="4" fill="#18202d"/>
+                            <rect x="87" y="58" width="9" height="3" fill="#795048"/>
+                            <rect x="84" y="68" width="12" height="9" fill="#c99571"/>
+                            <rect x="72" y="76" width="37" height="27" fill="#263448"/>
+                            <rect x="87" y="78" width="8" height="19" fill="#f0c566"/>
+                            <rect x="84" y="78" width="13" height="8" fill="#f1f3e9"/>
+                            <rect class="career-arm career-arm--far" x="101" y="82" width="11" height="5" fill="#c99571"/>
+                            <rect class="career-arm" x="104" y="89" width="16" height="5" fill="#c99571"/>
+                            <rect x="110" y="92" width="30" height="4" fill="#c1cbd5"/>
+                            <rect x="114" y="87" width="23" height="4" fill="#70d6ff"/>
+                        </svg>
+                        <div class="career-scene-copy">
+                            <div class="career-company-mark" role="img" aria-label="RCBC official logo">
+                                <span class="career-company-logo-frame--rcbc">
+                                    <img class="career-company-logo career-company-logo--rcbc" src="assets/logos/rcbc.svg" alt="">
+                                </span>
+                                <span>RCBC<br>ENTERPRISE SYSTEMS</span>
+                            </div>
+                            <span class="career-scene-label">Senior analyst · systems in command</span>
+                            <span class="career-scene-caption">Calm decisions. Mission-critical systems.</span>
+                        </div>
+                    </div>
                     
                     <div class="role-box">
                         <div class="role-title">System Analyst</div>
@@ -601,8 +1221,53 @@
                 <!-- ePDS Inc. -->
                 <div class="timeline-item right">
                     <div class="timeline-dot"></div>
-                    <h3 class="company-name">ePDS Inc.</h3>
+                    <h3 class="company-name">ePDS Inc. (an ePLDT Company)</h3>
                     <p class="duration-total">7 yrs 3 mos</p>
+
+                    <div class="career-scene career-scene--developer" data-scroll-reveal>
+                        <svg class="career-pixel-art" viewBox="0 0 176 132" role="img" aria-label="Pixel-art junior developer coding at a computer workstation">
+                            <rect x="16" y="17" width="72" height="49" fill="#111a28"/>
+                            <rect x="21" y="22" width="62" height="39" fill="#17283c"/>
+                            <rect x="27" y="28" width="21" height="3" fill="#79c0ff"/>
+                            <rect x="27" y="35" width="34" height="3" fill="#b8ff5c" opacity=".85"/>
+                            <rect x="32" y="42" width="43" height="3" fill="#79c0ff" opacity=".7"/>
+                            <rect x="27" y="49" width="29" height="3" fill="#d2a8ff"/>
+                            <rect class="career-screen-cursor" x="59" y="49" width="4" height="5" fill="#b8ff5c"/>
+                            <rect x="47" y="66" width="11" height="13" fill="#75849a"/>
+                            <rect x="37" y="78" width="32" height="4" fill="#aab5c2"/>
+                            <rect x="119" y="26" width="43" height="38" fill="#111a28"/>
+                            <rect x="123" y="30" width="35" height="30" fill="#183044"/>
+                            <rect x="128" y="36" width="23" height="3" fill="#70d6ff"/>
+                            <rect x="128" y="44" width="16" height="3" fill="#b8ff5c"/>
+                            <rect x="128" y="52" width="27" height="3" fill="#d2a8ff" opacity=".8"/>
+                            <rect x="15" y="95" width="149" height="7" fill="#8f694c"/>
+                            <rect x="22" y="102" width="6" height="20" fill="#51443d"/>
+                            <rect x="151" y="102" width="6" height="20" fill="#51443d"/>
+                            <rect x="77" y="47" width="25" height="26" fill="#d8a67d"/>
+                            <rect x="74" y="42" width="30" height="10" fill="#302b35"/>
+                            <rect x="74" y="48" width="6" height="8" fill="#302b35"/>
+                            <rect x="99" y="48" width="6" height="7" fill="#302b35"/>
+                            <rect x="82" y="57" width="4" height="4" fill="#202331"/>
+                            <rect x="96" y="57" width="4" height="4" fill="#202331"/>
+                            <rect x="87" y="65" width="8" height="3" fill="#a85f54"/>
+                            <rect x="84" y="72" width="12" height="8" fill="#d8a67d"/>
+                            <rect x="73" y="79" width="36" height="24" fill="#347ca0"/>
+                            <rect x="78" y="82" width="7" height="16" fill="#24556e"/>
+                            <rect x="98" y="82" width="7" height="16" fill="#24556e"/>
+                            <rect x="85" y="81" width="10" height="7" fill="#d2a8ff"/>
+                            <rect class="career-arm career-arm--far" x="100" y="83" width="12" height="5" fill="#d8a67d"/>
+                            <rect class="career-arm" x="104" y="90" width="17" height="5" fill="#d8a67d"/>
+                            <rect x="115" y="89" width="32" height="5" fill="#aab5c2"/>
+                        </svg>
+                        <div class="career-scene-copy">
+                            <div class="career-company-mark" role="img" aria-label="ePDS and ePLDT company logo">
+                                <img class="career-company-logo career-company-logo--epds" src="assets/logos/epds-8bit.png" alt="">
+                                <span>ePDS<br>AN ePLDT COMPANY</span>
+                            </div>
+                            <span class="career-scene-label">Junior developer · shipping code</span>
+                            <span class="career-scene-caption">Growing from programmer to systems developer.</span>
+                        </div>
+                    </div>
                     
                     <div class="role-box">
                         <div class="role-title">Systems Development Officer</div>
@@ -627,6 +1292,53 @@
                     <div class="timeline-dot"></div>
                     <h3 class="company-name">Velcoasia Management Corp.</h3>
                     <p class="duration-total">4 mos</p>
+
+                    <div class="career-scene career-scene--support" data-scroll-reveal>
+                        <svg class="career-pixel-art" viewBox="0 0 176 132" role="img" aria-label="Pixel-art IT support technician troubleshooting an open desktop PC and network router">
+                            <rect x="14" y="23" width="47" height="70" fill="#263244"/>
+                            <rect x="19" y="28" width="37" height="59" fill="#101824"/>
+                            <rect x="25" y="35" width="25" height="21" fill="#1a2c3b"/>
+                            <rect x="30" y="40" width="14" height="3" fill="#70d6ff"/>
+                            <rect x="30" y="47" width="10" height="3" fill="#b8ff5c"/>
+                            <rect x="25" y="63" width="25" height="3" fill="#536176"/>
+                            <rect x="25" y="70" width="25" height="3" fill="#536176"/>
+                            <rect x="25" y="77" width="18" height="3" fill="#536176"/>
+                            <rect x="67" y="19" width="45" height="34" fill="#111a28"/>
+                            <rect x="71" y="23" width="37" height="26" fill="#1c3245"/>
+                            <rect x="76" y="29" width="21" height="3" fill="#70d6ff"/>
+                            <rect x="76" y="36" width="26" height="3" fill="#b8ff5c" opacity=".7"/>
+                            <rect x="82" y="53" width="14" height="6" fill="#7c8897"/>
+                            <rect x="70" y="60" width="38" height="4" fill="#aab5c2"/>
+                            <path d="M56 80 C76 80 74 105 93 105 H127" fill="none" stroke="#f0c566" stroke-width="4" stroke-dasharray="5 3"/>
+                            <rect x="124" y="88" width="36" height="18" fill="#25364b"/>
+                            <rect x="129" y="92" width="26" height="10" fill="#172535"/>
+                            <rect x="132" y="94" width="4" height="4" fill="#b8ff5c"/>
+                            <rect x="140" y="94" width="4" height="4" fill="#70d6ff"/>
+                            <rect x="148" y="94" width="4" height="4" fill="#b8ff5c" opacity=".7"/>
+                            <rect x="82" y="65" width="25" height="25" fill="#d8a67d"/>
+                            <rect x="77" y="61" width="32" height="9" fill="#253243"/>
+                            <rect x="77" y="66" width="7" height="9" fill="#253243"/>
+                            <rect x="103" y="67" width="7" height="7" fill="#253243"/>
+                            <rect x="87" y="75" width="4" height="4" fill="#202331"/>
+                            <rect x="99" y="75" width="4" height="4" fill="#202331"/>
+                            <rect x="91" y="82" width="8" height="3" fill="#a85f54"/>
+                            <rect x="88" y="89" width="12" height="7" fill="#d8a67d"/>
+                            <rect x="72" y="95" width="43" height="10" fill="#70d6ff"/>
+                            <rect x="74" y="102" width="11" height="18" fill="#536176"/>
+                            <rect x="103" y="102" width="11" height="18" fill="#536176"/>
+                            <rect class="career-arm career-arm--far" x="103" y="88" width="11" height="5" fill="#d8a67d"/>
+                            <rect class="career-arm" x="55" y="80" width="13" height="5" fill="#d8a67d"/>
+                            <rect x="9" y="116" width="157" height="5" fill="#8f694c"/>
+                        </svg>
+                        <div class="career-scene-copy">
+                            <div class="career-company-mark" role="img" aria-label="Velcoasia Management company logo">
+                                <img class="career-company-logo" src="assets/logos/velcoasia-8bit.png" alt="">
+                                <span>VELCOASIA<br>MANAGEMENT</span>
+                            </div>
+                            <span class="career-scene-label">IT support · on the ground</span>
+                            <span class="career-scene-caption">Tracing cables, fixing PCs, restoring the network.</span>
+                        </div>
+                    </div>
                     
                     <div class="role-box">
                         <div class="role-title">IT Support Staff</div>
@@ -640,6 +1352,55 @@
                     <div class="timeline-dot"></div>
                     <h3 class="company-name">Smart Communications, Inc.</h3>
                     <p class="duration-total">Internship</p>
+
+                    <div class="career-scene" data-scroll-reveal>
+                        <svg class="career-pixel-art" viewBox="0 0 176 132" role="img" aria-label="Pixel-art freshman intern typing at an office desk">
+                            <rect x="14" y="12" width="54" height="38" fill="#192339"/>
+                            <rect x="18" y="16" width="46" height="30" fill="#253752"/>
+                            <rect x="22" y="20" width="5" height="5" fill="#b8ff5c"/>
+                            <rect x="31" y="20" width="5" height="5" fill="#70d6ff"/>
+                            <rect x="40" y="20" width="5" height="5" fill="#b8ff5c" opacity=".55"/>
+                            <rect x="22" y="31" width="5" height="5" fill="#70d6ff" opacity=".6"/>
+                            <rect x="31" y="31" width="5" height="5" fill="#b8ff5c" opacity=".45"/>
+                            <rect x="40" y="31" width="5" height="5" fill="#70d6ff"/>
+                            <rect x="104" y="30" width="54" height="43" fill="#090a12"/>
+                            <rect x="109" y="35" width="44" height="33" fill="#1d3043"/>
+                            <rect x="114" y="41" width="19" height="3" fill="#70d6ff"/>
+                            <rect x="114" y="48" width="29" height="3" fill="#b8ff5c" opacity=".8"/>
+                            <rect x="114" y="55" width="22" height="3" fill="#70d6ff" opacity=".7"/>
+                            <rect class="career-screen-cursor" x="140" y="55" width="4" height="5" fill="#b8ff5c"/>
+                            <rect x="124" y="73" width="14" height="5" fill="#69778d"/>
+                            <rect x="113" y="78" width="36" height="4" fill="#8694a7"/>
+                            <rect x="76" y="46" width="26" height="25" fill="#d8a67d"/>
+                            <rect x="72" y="42" width="30" height="9" fill="#202331"/>
+                            <rect x="72" y="47" width="7" height="8" fill="#202331"/>
+                            <rect x="96" y="48" width="6" height="6" fill="#202331"/>
+                            <rect x="79" y="56" width="3" height="3" fill="#202331"/>
+                            <rect x="94" y="56" width="3" height="3" fill="#202331"/>
+                            <rect x="85" y="64" width="8" height="3" fill="#a85f54"/>
+                            <rect x="83" y="70" width="13" height="8" fill="#d8a67d"/>
+                            <rect x="74" y="76" width="32" height="24" fill="#70d6ff"/>
+                            <rect x="78" y="80" width="7" height="17" fill="#4a8ba5"/>
+                            <rect x="98" y="80" width="5" height="17" fill="#4a8ba5"/>
+                            <rect x="87" y="79" width="7" height="8" fill="#b8ff5c"/>
+                            <rect class="career-arm career-arm--far" x="99" y="81" width="10" height="5" fill="#d8a67d"/>
+                            <rect class="career-arm" x="101" y="87" width="13" height="5" fill="#d8a67d"/>
+                            <rect x="10" y="96" width="156" height="7" fill="#9a704f"/>
+                            <rect x="17" y="103" width="7" height="21" fill="#5b493d"/>
+                            <rect x="152" y="103" width="7" height="21" fill="#5b493d"/>
+                            <rect x="108" y="90" width="39" height="5" fill="#aab5c2"/>
+                            <rect x="113" y="86" width="29" height="4" fill="#70d6ff"/>
+                            <rect x="121" y="89" width="13" height="2" fill="#253752"/>
+                        </svg>
+                        <div class="career-scene-copy">
+                                <div class="career-company-mark" role="img" aria-label="Smart Communications Philippines logo">
+                                    <img class="career-company-logo career-company-logo--smart" src="assets/logos/smart-communications-8bit.png" alt="">
+                                    <span>SMART<br>COMMUNICATIONS</span>
+                                </div>
+                            <span class="career-scene-label">First day · IT intern</span>
+                            <span class="career-scene-caption">Learning the ropes, one line at a time.</span>
+                        </div>
+                    </div>
                     
                     <div class="role-box">
                         <div class="role-title">IT Intern</div>
@@ -651,62 +1412,255 @@
             </div>
 
             <!-- CONTACT SECTION -->
-            <h2 class="section-title">Connect</h2>
-            
+            <section id="connect-section" aria-labelledby="connect-heading">
+            <h2 class="section-title" id="connect-heading">Connect</h2>
+
             <div class="contact-grid">
                 <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/christian-rey-baron-98a773130?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" class="contact-card linkedin">
+                <a href="https://linkedin.com/in/YOUR-PROFILE" target="_blank" class="contact-card linkedin">
                     <i class="fa-brands fa-linkedin-in"></i>
                     <div>
                         <p>LinkedIn</p>
-                        <p>Christian Rey Baron</p>
+                        <p>Professional Profile</p>
                     </div>
                 </a>
 
-                <!-- Email -->
-                <a href="mailto:cibaron8@gmail.com" class="contact-card email">
-                    <i class="fa-solid fa-envelope"></i>
+                <!-- Phone -->
+                <a href="tel:+YOUR-NUMBER" class="contact-card phone">
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
                     <div>
-                        <p>Email</p>
-                        <p>cibaron8@gmail.com</p>
-                    </div>
-                </a>
-
-                <!-- Direct Call -->
-                <a href="tel:+639494404522" class="contact-card phone">
-                    <i class="fa-solid fa-phone"></i>
-                    <div>
-                        <p>Direct Call</p>
-                        <p>+63 949 440 4522</p>
+                        <p>Phone</p>
+                        <p>Call directly</p>
                     </div>
                 </a>
 
                 <!-- WhatsApp -->
-                <a href="https://wa.me/639494404522" target="_blank" class="contact-card whatsapp">
+                <a href="https://wa.me/YOUR-NUMBER" target="_blank" class="contact-card whatsapp">
                     <i class="fa-brands fa-whatsapp"></i>
                     <div>
                         <p>WhatsApp</p>
-                        <p>Message Instantly</p>
+                        <p>Instant Message</p>
                     </div>
                 </a>
 
                 <!-- Viber -->
-                <a href="viber://contact?number=%2B639494404522" class="contact-card viber">
+                <a href="viber://contact?number=%2BYOUR-NUMBER" target="_blank" class="contact-card viber">
                     <i class="fa-brands fa-viber"></i>
                     <div>
                         <p>Viber</p>
-                        <p>Direct Viber Line</p>
+                        <p>Direct Business Line</p>
                     </div>
                 </a>
             </div>
+            </section>
 
         </main>
 
         <footer>
-            <p>&copy; 2026 Christian Rey Baron. Engineered for high performance. Bacoor, Philippines.</p>
+            <p>&copy; 2026 Christian Rey Baron. Built for high-performance deployment. Manila, Philippines.</p>
         </footer>
 
     </div>
 
+    <div class="floating-call" id="floating-call">
+        <div class="floating-call-menu" id="floating-call-menu" role="menu" aria-label="Call or message options" hidden>
+            <a class="floating-call-option whatsapp" role="menuitem" href="https://wa.me/YOUR-NUMBER" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a class="floating-call-option viber" role="menuitem" href="viber://contact?number=%2BYOUR-NUMBER">
+                <i class="fa-brands fa-viber" aria-hidden="true"></i>
+                <span>Viber</span>
+            </a>
+        </div>
+        <button class="floating-call-button" id="floating-call-button" type="button" aria-label="Open call and messaging options" aria-haspopup="menu" aria-expanded="false" aria-controls="floating-call-menu">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <script>
+        const bookmarkButton = document.getElementById('bookmark-button');
+        const bookmarkHelp = document.getElementById('bookmark-help');
+        const bookmarkIcon = bookmarkButton.querySelector('i');
+        const bookmarkLabel = bookmarkButton.querySelector('span');
+        const bookmarkKey = 'christian-rey-baron-card-bookmarked';
+
+        function updateBookmark(isBookmarked, message) {
+            bookmarkButton.setAttribute('aria-pressed', String(isBookmarked));
+            bookmarkButton.classList.toggle('is-saving', isBookmarked);
+            bookmarkIcon.className = isBookmarked ? 'fa-solid fa-bookmark' : 'fa-regular fa-bookmark';
+            bookmarkLabel.textContent = isBookmarked ? 'Bookmarked' : 'Add to bookmarks';
+            bookmarkHelp.textContent = message;
+        }
+
+        try {
+            const isBookmarked = window.localStorage.getItem(bookmarkKey) === 'true';
+            updateBookmark(isBookmarked, isBookmarked ? 'Saved on this device.' : 'Save this card on this device for later.');
+        } catch {
+            bookmarkHelp.textContent = 'Bookmark storage is unavailable in this browser.';
+        }
+
+        bookmarkButton.addEventListener('click', () => {
+            const shouldBookmark = bookmarkButton.getAttribute('aria-pressed') !== 'true';
+
+            try {
+                window.localStorage.setItem(bookmarkKey, String(shouldBookmark));
+                updateBookmark(
+                    shouldBookmark,
+                    shouldBookmark ? 'Saved on this device.' : 'Bookmark removed from this device.'
+                );
+            } catch {
+                bookmarkHelp.textContent = 'Could not save this bookmark in this browser.';
+            }
+        });
+
+        const contributionCanvas = document.getElementById('contribution-canvas');
+        const contributionContext = contributionCanvas.getContext('2d');
+        const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const dotSpacing = 13;
+        const dotSize = 7;
+        let contributionDots = [];
+        let contributionTimer;
+
+        if (!contributionContext) {
+            throw new Error('Canvas 2D context is unavailable.');
+        }
+
+        function drawContributionGrid() {
+            const { width, height } = contributionCanvas.getBoundingClientRect();
+            const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+            contributionCanvas.width = Math.round(width * pixelRatio);
+            contributionCanvas.height = Math.round(height * pixelRatio);
+            contributionContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+            contributionContext.clearRect(0, 0, width, height);
+
+            const columns = Math.max(1, Math.floor((width - dotSpacing) / dotSpacing));
+            const rows = Math.max(1, Math.floor((height - dotSpacing) / dotSpacing));
+            const gridWidth = (columns - 1) * dotSpacing + dotSize;
+            const gridHeight = (rows - 1) * dotSpacing + dotSize;
+            const offsetX = (width - gridWidth) / 2;
+            const offsetY = (height - gridHeight) / 2;
+            const colors = [
+                'rgba(184, 255, 92, 0.06)',
+                'rgba(184, 255, 92, 0.14)',
+                'rgba(184, 255, 92, 0.27)',
+                'rgba(184, 255, 92, 0.48)',
+                'rgba(184, 255, 92, 0.78)'
+            ];
+
+            contributionDots.forEach((dot, index) => {
+                dot.x = offsetX + (index % columns) * dotSpacing;
+                dot.y = offsetY + Math.floor(index / columns) * dotSpacing;
+                contributionContext.fillStyle = colors[dot.level];
+                contributionContext.fillRect(dot.x, dot.y, dotSize, dotSize);
+            });
+        }
+
+        function resetContributionGrid() {
+            const { width, height } = contributionCanvas.getBoundingClientRect();
+            const columns = Math.max(1, Math.floor((width - dotSpacing) / dotSpacing));
+            const rows = Math.max(1, Math.floor((height - dotSpacing) / dotSpacing));
+            contributionDots = Array.from({ length: columns * rows }, () => ({
+                level: Math.floor(Math.random() * 5),
+                nextChange: performance.now() + Math.random() * 1200,
+                x: 0,
+                y: 0
+            }));
+            drawContributionGrid();
+        }
+
+        function flickerContributionDots() {
+            const now = performance.now();
+            let changed = false;
+
+            contributionDots.forEach((dot) => {
+                if (now >= dot.nextChange) {
+                    dot.level = Math.floor(Math.random() * 5);
+                    dot.nextChange = now + 250 + Math.random() * 1400;
+                    changed = true;
+                }
+            });
+
+            if (changed) {
+                drawContributionGrid();
+            }
+        }
+
+        function updateContributionMotion() {
+            window.clearInterval(contributionTimer);
+            if (!motionPreference.matches) {
+                contributionTimer = window.setInterval(flickerContributionDots, 150);
+            }
+        }
+
+        resetContributionGrid();
+        updateContributionMotion();
+        window.addEventListener('resize', resetContributionGrid, { passive: true });
+        motionPreference.addEventListener('change', updateContributionMotion);
+
+        const careerScenes = document.querySelectorAll('.career-scene[data-scroll-reveal]');
+        if (careerScenes.length && 'IntersectionObserver' in window) {
+            careerScenes.forEach((scene) => scene.classList.add('is-pending'));
+            const careerObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('is-pending');
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.35 });
+            careerScenes.forEach((scene) => careerObserver.observe(scene));
+        }
+
+        const floatingCall = document.getElementById('floating-call');
+        const floatingCallButton = document.getElementById('floating-call-button');
+        const floatingCallMenu = document.getElementById('floating-call-menu');
+        const connectSection = document.getElementById('connect-section');
+        const pageFooter = document.querySelector('footer');
+        const hiddenCallSections = new Set();
+
+        function setCallMenuOpen(isOpen) {
+            floatingCallMenu.hidden = !isOpen;
+            floatingCallButton.setAttribute('aria-expanded', String(isOpen));
+        }
+
+        floatingCallButton.addEventListener('click', () => {
+            setCallMenuOpen(floatingCallMenu.hidden);
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!floatingCall.contains(event.target)) {
+                setCallMenuOpen(false);
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !floatingCallMenu.hidden) {
+                setCallMenuOpen(false);
+                floatingCallButton.focus();
+            }
+        });
+
+        if ('IntersectionObserver' in window) {
+            const callVisibilityObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        hiddenCallSections.add(entry.target);
+                    } else {
+                        hiddenCallSections.delete(entry.target);
+                    }
+                });
+
+                const shouldHideCall = hiddenCallSections.size > 0;
+                floatingCall.classList.toggle('is-hidden', shouldHideCall);
+                if (shouldHideCall) {
+                    setCallMenuOpen(false);
+                }
+            }, { threshold: 0 });
+            callVisibilityObserver.observe(connectSection);
+            callVisibilityObserver.observe(pageFooter);
+        }
+    </script>
 </body>
 </html>
