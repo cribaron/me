@@ -1,10 +1,11 @@
-# Christian Rey Baron
+# Christian Rey Ibasco Baron
 
-> Christian Rey Baron is a Manila-based Systems Analyst and Full-Stack Developer with experience building enterprise banking systems, business software, and automation solutions.
+> Christian Rey Ibasco Baron, also known as Chan, is a Manila-based Systems Analyst and Full-Stack Developer with experience building enterprise banking systems, business software, and automation solutions.
 
 ## Profile
 
 - Personal website: https://cribaron.github.io/me/
+- Nickname: Chan
 - LinkedIn: https://www.linkedin.com/in/christian-rey-baron-98a773130/
 - Location: Manila, Philippines
 - Current role shown on the website: System Analyst

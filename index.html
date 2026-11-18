@@ -3,32 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christian Rey Baron | Systems Analyst & Developer</title>
-    <meta name="description" content="Christian Rey Baron is a Manila-based Systems Analyst and Full-Stack Developer with experience building enterprise banking systems, business software, and automation solutions.">
-    <meta name="author" content="Christian Rey Baron">
+    <title>Christian Rey Ibasco Baron | Systems Analyst & Developer</title>
+    <meta name="description" content="Christian Rey Ibasco Baron, also known as Chan, is a Manila-based Systems Analyst and Full-Stack Developer with experience building enterprise banking systems, business software, and automation solutions.">
+    <meta name="author" content="Christian Rey Ibasco Baron">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#050508">
     <link rel="canonical" href="https://cribaron.github.io/me/">
     <meta property="og:type" content="profile">
-    <meta property="og:title" content="Christian Rey Baron | Systems Analyst & Full-Stack Developer">
-    <meta property="og:description" content="Manila-based Systems Analyst and Full-Stack Developer building enterprise banking systems, business software, and automation solutions.">
+    <meta property="og:title" content="Christian Rey Ibasco Baron | Systems Analyst & Full-Stack Developer">
+    <meta property="og:description" content="Christian Rey Ibasco Baron, also known as Chan, is a Manila-based Systems Analyst and Full-Stack Developer.">
     <meta property="og:url" content="https://cribaron.github.io/me/">
     <meta property="og:image" content="https://cribaron.github.io/me/tech.png">
-    <meta property="og:image:alt" content="Christian Rey Baron">
+    <meta property="og:image:alt" content="Christian Rey Ibasco Baron, also known as Chan">
     <meta property="og:locale" content="en_PH">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Christian Rey Baron | Systems Analyst & Full-Stack Developer">
-    <meta name="twitter:description" content="Manila-based Systems Analyst and Full-Stack Developer building enterprise banking systems, business software, and automation solutions.">
+    <meta name="twitter:title" content="Christian Rey Ibasco Baron | Systems Analyst & Full-Stack Developer">
+    <meta name="twitter:description" content="Christian Rey Ibasco Baron, also known as Chan, is a Manila-based Systems Analyst and Full-Stack Developer.">
     <meta name="twitter:image" content="https://cribaron.github.io/me/tech.png">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Christian Rey Baron",
+      "name": "Christian Rey Ibasco Baron",
+      "alternateName": "Chan",
       "url": "https://cribaron.github.io/me/",
       "image": "https://cribaron.github.io/me/tech.png",
       "jobTitle": "Systems Analyst and Full-Stack Developer",
-      "description": "Manila-based Systems Analyst and Full-Stack Developer with experience building enterprise banking systems, business software, and automation solutions.",
+      "description": "Christian Rey Ibasco Baron, also known as Chan, is a Manila-based Systems Analyst and Full-Stack Developer with experience building enterprise banking systems, business software, and automation solutions.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Manila",
@@ -179,9 +180,30 @@
             font-size: 1.2rem;
             color: var(--text-secondary);
             max-width: 600px;
-            margin: 0 auto 2.5rem auto;
+            margin: 0 auto 1.5rem auto;
             font-weight: 300;
             letter-spacing: 0.05rem;
+        }
+
+        .location-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            color: var(--text-secondary);
+            font: 0.82rem 'Space Mono', monospace;
+        }
+
+        .location-logo {
+            display: block;
+            width: 1.75rem;
+            height: 1.75rem;
+            image-rendering: pixelated;
+        }
+
+        .location-pin {
+            color: var(--accent-color);
+            font-size: 0.95rem;
         }
 
         /* --- TECH STACK (CHIPS) --- */
@@ -844,6 +866,8 @@
             display: block;
             width: 100%;
             height: 100%;
+            position: relative;
+            z-index: 0;
         }
 
         header > :not(.contribution-cover) {
@@ -912,53 +936,6 @@
             letter-spacing: 0;
         }
 
-        .bookmark-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.7rem;
-            min-height: 48px;
-            margin: 0 auto 0.65rem;
-            padding: 0.8rem 1.15rem;
-            color: var(--accent-color);
-            background: rgba(184, 255, 92, 0.08);
-            border: 1px solid var(--accent-color);
-            border-radius: 3px;
-            box-shadow: 4px 4px 0 rgba(184, 255, 92, 0.18);
-            cursor: pointer;
-            font: 700 0.76rem 'Space Mono', monospace;
-            letter-spacing: 0.04rem;
-            text-transform: uppercase;
-            transition: transform 160ms steps(3, end), box-shadow 160ms steps(3, end), background 160ms ease;
-        }
-
-        .bookmark-button:hover {
-            color: var(--bg-color);
-            background: var(--accent-color);
-            box-shadow: 2px 2px 0 rgba(184, 255, 92, 0.28);
-            transform: translate(2px, 2px);
-        }
-
-        .bookmark-button:focus-visible {
-            outline: 2px solid #fff;
-            outline-offset: 4px;
-        }
-
-        .bookmark-button[aria-pressed="true"] {
-            color: var(--bg-color);
-            background: var(--accent-color);
-        }
-
-        .bookmark-button.is-saving {
-            animation: bookmark-pop 280ms steps(3, end);
-        }
-
-        .bookmark-help {
-            min-height: 1.4rem;
-            color: var(--text-secondary);
-            font: 0.72rem 'Space Mono', monospace;
-        }
-
         .app-card,
         .role-box,
         .contact-card {
@@ -972,7 +949,7 @@
         }
 
         .tech-heading {
-            margin: 1.5rem 0 0.7rem;
+            margin: 1.25rem 0 0.7rem;
             color: var(--text-secondary);
             font: 700 0.65rem 'Space Mono', monospace;
             letter-spacing: 0.12rem;
@@ -1028,15 +1005,10 @@
             50% { opacity: 0.3; }
         }
 
-        @keyframes bookmark-pop {
-            50% { transform: translateY(-4px) scale(1.03); }
-        }
-
         @media (max-width: 600px) {
             .container { padding: 2rem 1.1rem; }
             .system-status { margin-bottom: 2rem; font-size: 0.58rem; }
             .hero-tag { letter-spacing: 0.08rem; }
-            .bookmark-button { width: 100%; max-width: 280px; }
             .contribution-cover { top: 3rem; height: 165px; }
             .career-scene { gap: 0.35rem; padding: 0.4rem; }
             .career-company-mark { font-size: 0.58rem; }
@@ -1079,17 +1051,18 @@
             <!-- PROFILE IMAGE PICTURE -->
             <div class="profile-container">
                 <!-- Replace 'profile.jpg' with your photo link (e.g., imgur or local file) -->
-                <img src="tech.png" alt="Christian Rey Baron" class="profile-img">
+                <img src="tech.png" alt="Christian Rey Ibasco Baron" class="profile-img">
             </div>
 
             <span class="hero-tag">A Decade of Enterprise Systems Engineering</span>
-            <h1>Christian Rey Baron</h1>
+            <h1>Christian Rey Ibasco Baron</h1>
             <p class="subtitle">Systems Analyst & Full-Stack Developer engineering mission-critical banking portals and automated business software architectures.</p>
-            <button class="bookmark-button" id="bookmark-button" type="button" aria-pressed="false" aria-describedby="bookmark-help">
-                <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
-                <span>Add to bookmarks</span>
-            </button>
-            <p class="bookmark-help" id="bookmark-help" aria-live="polite">Save this card on this device for later.</p>
+            <p class="location-line">
+                <i class="location-pin fa-solid fa-location-dot" aria-hidden="true"></i>
+                <span>Manila,</span>
+                <span>Philippines</span>
+                <img class="location-logo" src="assets/logos/rizal-monument-8bit.svg" alt="" aria-hidden="true">
+            </p>
             
             <!-- TECH STACK -->
             <p class="tech-heading">Tech stack</p>
@@ -1502,7 +1475,7 @@
         </main>
 
         <footer>
-            <p>&copy; 2026 Christian Rey Baron. Built for high-performance deployment. Manila, Philippines.</p>
+            <p>&copy; 2026 Christian Rey Ibasco Baron. Built for high-performance deployment. Manila, Philippines.</p>
         </footer>
 
     </div>
@@ -1524,83 +1497,6 @@
     </div>
 
     <script>
-        const bookmarkButton = document.getElementById('bookmark-button');
-        const bookmarkHelp = document.getElementById('bookmark-help');
-        const bookmarkIcon = bookmarkButton.querySelector('i');
-        const bookmarkLabel = bookmarkButton.querySelector('span');
-        const bookmarkKey = 'christian-rey-baron-card-bookmarked';
-
-        function updateBookmark(isBookmarked, message) {
-            bookmarkButton.setAttribute('aria-pressed', String(isBookmarked));
-            bookmarkButton.classList.toggle('is-saving', isBookmarked);
-            bookmarkIcon.className = isBookmarked ? 'fa-solid fa-bookmark' : 'fa-regular fa-bookmark';
-            bookmarkLabel.textContent = isBookmarked ? 'Bookmarked' : 'Add to bookmarks';
-            bookmarkHelp.textContent = message;
-        }
-
-        function readBookmarkCookie() {
-            try {
-                const cookiePrefix = `${encodeURIComponent(bookmarkKey)}=`;
-                const cookie = document.cookie.split(';').map(entry => entry.trim()).find(entry => entry.startsWith(cookiePrefix));
-                return cookie ? decodeURIComponent(cookie.slice(cookiePrefix.length)) : null;
-            } catch {
-                return null;
-            }
-        }
-
-        function getBookmarkState() {
-            const cookieValue = readBookmarkCookie();
-            if (cookieValue === 'true' || cookieValue === 'false') {
-                return cookieValue === 'true';
-            }
-
-            try {
-                return window.localStorage.getItem(bookmarkKey) === 'true';
-            } catch {
-                return false;
-            }
-        }
-
-        function saveBookmarkState(isBookmarked) {
-            const value = String(isBookmarked);
-            let savedToLocalStorage = false;
-
-            try {
-                window.localStorage.setItem(bookmarkKey, value);
-                savedToLocalStorage = window.localStorage.getItem(bookmarkKey) === value;
-            } catch {
-                // Fall back to a cookie if browser storage is unavailable.
-            }
-
-            try {
-                const secure = window.location.protocol === 'https:' ? '; Secure' : '';
-                document.cookie = `${encodeURIComponent(bookmarkKey)}=${value}; path=/; max-age=${isBookmarked ? 31536000 : 0}; SameSite=Lax${secure}`;
-            } catch {
-                // The verified localStorage value can still be used.
-            }
-
-            if (!savedToLocalStorage && readBookmarkCookie() !== value) {
-                throw new Error('Bookmark storage is unavailable.');
-            }
-        }
-
-        const isBookmarked = getBookmarkState();
-        updateBookmark(isBookmarked, isBookmarked ? 'Saved on this device.' : 'Save this card on this device for later.');
-
-        bookmarkButton.addEventListener('click', () => {
-            const shouldBookmark = bookmarkButton.getAttribute('aria-pressed') !== 'true';
-
-            try {
-                saveBookmarkState(shouldBookmark);
-                updateBookmark(
-                    shouldBookmark,
-                    shouldBookmark ? 'Saved on this device.' : 'Bookmark removed from this device.'
-                );
-            } catch {
-                bookmarkHelp.textContent = 'Could not save this bookmark in this browser.';
-            }
-        });
-
         function formatDuration(monthCount) {
             const years = Math.floor(monthCount / 12);
             const months = monthCount % 12;
@@ -1636,6 +1532,12 @@
         const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
         const dotSpacing = 13;
         const dotSize = 7;
+        const nicknameGlyphs = [
+            ['01110', '10001', '10000', '10000', '10000', '10001', '01110'],
+            ['10001', '10001', '10001', '11111', '10001', '10001', '10001'],
+            ['01110', '10001', '10001', '11111', '10001', '10001', '10001'],
+            ['10001', '11001', '10101', '10011', '10001', '10001', '10001']
+        ];
         let contributionDots = [];
         let contributionTimer;
 
@@ -1665,11 +1567,57 @@
                 'rgba(184, 255, 92, 0.78)'
             ];
 
+            const letterGap = 1;
+            const pixelScale = width >= 600 && height >= 180 ? 2 : 1;
+            const patternColumns = (nicknameGlyphs.length * 5 + (nicknameGlyphs.length - 1) * letterGap) * pixelScale;
+            const patternRows = nicknameGlyphs[0].length * pixelScale;
+            const horizontalSpacing = Math.min(dotSpacing, (width - dotSize) / (patternColumns - 1));
+            const patternWidth = (patternColumns - 1) * horizontalSpacing + dotSize;
+            const patternHeight = (patternRows - 1) * dotSpacing + dotSize;
+            const patternStartX = (width - patternWidth) / 2;
+            const patternStartY = (height - patternHeight) / 2;
+
             contributionDots.forEach((dot, index) => {
                 dot.x = offsetX + (index % columns) * dotSpacing;
                 dot.y = offsetY + Math.floor(index / columns) * dotSpacing;
-                contributionContext.fillStyle = colors[dot.level];
+                const isNicknameArea = dot.x >= patternStartX
+                    && dot.x < patternStartX + patternWidth
+                    && dot.y >= patternStartY
+                    && dot.y < patternStartY + patternHeight;
+                contributionContext.fillStyle = colors[isNicknameArea ? Math.min(dot.level, 1) : dot.level];
                 contributionContext.fillRect(dot.x, dot.y, dotSize, dotSize);
+            });
+
+            nicknameGlyphs.forEach((glyph, letterIndex) => {
+                glyph.forEach((patternRow, rowIndex) => {
+                    Array.from(patternRow).forEach((pixel, columnIndex) => {
+                        if (pixel !== '1') {
+                            return;
+                        }
+
+                        const firstColumn = (letterIndex * (5 + letterGap) + columnIndex) * pixelScale;
+                        const firstRow = rowIndex * pixelScale;
+
+                        for (let blockRow = 0; blockRow < pixelScale; blockRow += 1) {
+                            for (let blockColumn = 0; blockColumn < pixelScale; blockColumn += 1) {
+                                const patternColumn = firstColumn + blockColumn;
+                                const patternRow = firstRow + blockRow;
+                                const gridColumn = Math.max(0, Math.min(columns - 1,
+                                    Math.round((patternStartX + patternColumn * horizontalSpacing - offsetX) / dotSpacing)));
+                                const gridRow = Math.max(0, Math.min(rows - 1,
+                                    Math.round((patternStartY + patternRow * dotSpacing - offsetY) / dotSpacing)));
+                                const patternDot = contributionDots[gridRow * columns + gridColumn];
+                                contributionContext.fillStyle = colors[patternDot.level >= 2 ? 4 : 3];
+                                contributionContext.fillRect(
+                                    patternStartX + patternColumn * horizontalSpacing,
+                                    patternStartY + patternRow * dotSpacing,
+                                    dotSize,
+                                    dotSize
+                                );
+                            }
+                        }
+                    });
+                });
             });
         }
 
