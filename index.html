@@ -1158,7 +1158,7 @@
                 <div class="timeline-item left active">
                     <div class="timeline-dot"></div>
                     <h3 class="company-name">RCBC</h3>
-                    <p class="duration-total">4 yrs 4 mos</p>
+                    <p class="duration-total" data-duration-start="2022-03">4 yrs 8 mos</p>
 
                     <div class="career-scene career-scene--senior" data-scroll-reveal>
                         <svg class="career-pixel-art" viewBox="0 0 176 132" role="img" aria-label="Pixel-art senior systems analyst reviewing banking dashboards in a tailored suit">
@@ -1200,16 +1200,16 @@
                                 <span class="career-company-logo-frame--rcbc">
                                     <img class="career-company-logo career-company-logo--rcbc" src="assets/logos/rcbc.svg" alt="">
                                 </span>
-                                <span>RCBC<br>ENTERPRISE SYSTEMS</span>
+                            <span>RCBC<br> - Rizal Commercial Banking Corporation</span>
                             </div>
-                            <span class="career-scene-label">Senior analyst · systems in command</span>
+                            <span class="career-scene-label">System Analyst · systems in command</span>
                             <span class="career-scene-caption">Calm decisions. Mission-critical systems.</span>
                         </div>
                     </div>
                     
                     <div class="role-box">
                         <div class="role-title">System Analyst</div>
-                        <div class="role-date">Feb 2025 - Present · 1 yr 5 mos</div>
+                        <div class="role-date" data-duration-start="2025-02" data-duration-label="Feb 2025 - Present">Feb 2025 - Present · 1 yr 9 mos</div>
                         
                         <div class="role-divider"></div>
                         
@@ -1493,18 +1493,60 @@
             bookmarkHelp.textContent = message;
         }
 
-        try {
-            const isBookmarked = window.localStorage.getItem(bookmarkKey) === 'true';
-            updateBookmark(isBookmarked, isBookmarked ? 'Saved on this device.' : 'Save this card on this device for later.');
-        } catch {
-            bookmarkHelp.textContent = 'Bookmark storage is unavailable in this browser.';
+        function readBookmarkCookie() {
+            try {
+                const cookiePrefix = `${encodeURIComponent(bookmarkKey)}=`;
+                const cookie = document.cookie.split(';').map(entry => entry.trim()).find(entry => entry.startsWith(cookiePrefix));
+                return cookie ? decodeURIComponent(cookie.slice(cookiePrefix.length)) : null;
+            } catch {
+                return null;
+            }
         }
+
+        function getBookmarkState() {
+            const cookieValue = readBookmarkCookie();
+            if (cookieValue === 'true' || cookieValue === 'false') {
+                return cookieValue === 'true';
+            }
+
+            try {
+                return window.localStorage.getItem(bookmarkKey) === 'true';
+            } catch {
+                return false;
+            }
+        }
+
+        function saveBookmarkState(isBookmarked) {
+            const value = String(isBookmarked);
+            let savedToLocalStorage = false;
+
+            try {
+                window.localStorage.setItem(bookmarkKey, value);
+                savedToLocalStorage = window.localStorage.getItem(bookmarkKey) === value;
+            } catch {
+                // Fall back to a cookie if browser storage is unavailable.
+            }
+
+            try {
+                const secure = window.location.protocol === 'https:' ? '; Secure' : '';
+                document.cookie = `${encodeURIComponent(bookmarkKey)}=${value}; path=/; max-age=${isBookmarked ? 31536000 : 0}; SameSite=Lax${secure}`;
+            } catch {
+                // The verified localStorage value can still be used.
+            }
+
+            if (!savedToLocalStorage && readBookmarkCookie() !== value) {
+                throw new Error('Bookmark storage is unavailable.');
+            }
+        }
+
+        const isBookmarked = getBookmarkState();
+        updateBookmark(isBookmarked, isBookmarked ? 'Saved on this device.' : 'Save this card on this device for later.');
 
         bookmarkButton.addEventListener('click', () => {
             const shouldBookmark = bookmarkButton.getAttribute('aria-pressed') !== 'true';
 
             try {
-                window.localStorage.setItem(bookmarkKey, String(shouldBookmark));
+                saveBookmarkState(shouldBookmark);
                 updateBookmark(
                     shouldBookmark,
                     shouldBookmark ? 'Saved on this device.' : 'Bookmark removed from this device.'
@@ -1513,6 +1555,36 @@
                 bookmarkHelp.textContent = 'Could not save this bookmark in this browser.';
             }
         });
+
+        function formatDuration(monthCount) {
+            const years = Math.floor(monthCount / 12);
+            const months = monthCount % 12;
+            const parts = [];
+
+            if (years > 0) {
+                parts.push(`${years} yr${years === 1 ? '' : 's'}`);
+            }
+            if (months > 0 || parts.length === 0) {
+                parts.push(`${months} mo${months === 1 ? '' : 's'}`);
+            }
+
+            return parts.join(' ');
+        }
+
+        function updateCurrentRoleDurations() {
+            const now = new Date();
+            const currentMonth = now.getFullYear() * 12 + now.getMonth();
+
+            document.querySelectorAll('[data-duration-start]').forEach((element) => {
+                const [year, month] = element.dataset.durationStart.split('-').map(Number);
+                const startMonth = year * 12 + month - 1;
+                const duration = formatDuration(Math.max(0, currentMonth - startMonth));
+                const label = element.dataset.durationLabel;
+                element.textContent = label ? `${label} · ${duration}` : duration;
+            });
+        }
+
+        updateCurrentRoleDurations();
 
         const contributionCanvas = document.getElementById('contribution-canvas');
         const contributionContext = contributionCanvas.getContext('2d');
