@@ -1,0 +1,22 @@
+# Christian Rey Baron
+
+> Christian Rey Baron is a Manila-based Systems Analyst and Full-Stack Developer with experience building enterprise banking systems, business software, and automation solutions.
+
+## Profile
+
+- Personal website: https://cribaron.github.io/me/
+- LinkedIn: https://www.linkedin.com/in/christian-rey-baron-98a773130/
+- Location: Manila, Philippines
+- Current role shown on the website: System Analyst
+
+## Areas of work
+
+- Enterprise and banking systems
+- Full-stack development
+- C# and ASP.NET MVC
+- Web APIs and Entity Framework
+- Business process automation with n8n, Make.com, Zapier, and GoHighLevel
+
+## Experience
+
+See the personal website for the professional timeline, system deployments, and contact options.
